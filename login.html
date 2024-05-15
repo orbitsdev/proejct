@@ -13,13 +13,23 @@
 	<link rel="stylesheet" href="loginform/css/font-awesome.min.css">
 	<link rel="stylesheet" href="loginform/css/style.css">
 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyBh1oNe0wqgv4NBQ3AjbxGYIh5mvl9YU&callback=initMap" async defer></script>
+    <style>
+        /* Set the dimensions of the map container */
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+
 	</head>
 	<body>
+		<div id="map"></div>
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">BUY LATEST TECHNOLOGY</h2>
+					<h2 class="heading-section">SHOP LATEST AND ORIGINAL GADGETS</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -52,7 +62,8 @@
 								</div>
 	            </div> -->
 	            <div class="form-group">
-	            	<button type="submit" class=" rounded btn-dark  p-3 px-5  submit ">Get Started</button>
+	            	<a href="index.html" class=" rounded btn-dark  p-3 px-5  submit ">Get Started</a>
+	            	<!-- <button type="submit" class=" rounded btn-dark  p-3 px-5  submit ">Get Started</button> -->
 	            </div>
 	          </form>
 	        </div>
@@ -60,11 +71,31 @@
 			</div>
 		</div>
 	</section>
-
-	<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+	<script>
+		// Initialize the map asynchronously
+		async function initMap() {
+			// Specify coordinates for your map center
+			var myLatLng = {lat: 40.7128, lng: -74.0060};
+		
+			// Create a new map object
+			var map = new google.maps.Map(document.getElementById('map'), {
+				center: myLatLng, // Set the center of the map
+				zoom: 20 // Set the zoom level
+			});
+		
+			// Optional: Add a marker to the map
+			var marker = new google.maps.Marker({
+				position: myLatLng,
+				map: map,
+				title: 'New York City'
+			});
+		}
+		</script>
+		
+	<script src="loginform/js/jquery.min.js"></script>
+  <script src="loginform/js/popper.js"></script>
+  <script src="loginform/js/bootstrap.min.js"></script>
+  <script src="loginform/js/main.js"></script>
 
 	</body>
 </html>
